@@ -1,0 +1,5 @@
+contracheque*.csv
+env/
+.env
+__pycache__
+*.ipynb
