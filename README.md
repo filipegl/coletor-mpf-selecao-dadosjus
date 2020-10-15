@@ -2,7 +2,7 @@
 
 Este é um coletor do site http://www.transparencia.mpf.mp.br/conteudo/contracheque feito para o [DadosJusBR](https://github.com/dadosjusbr)
 ## Instruções de execução
-É recomendável criar um novo ambiente para execução. Você pode criar um com o [virtualenv](https://pypi.org/project/virtualenv/) utilizando os comandos: 
+É recomendável criar um novo ambiente para execução. Você pode criar e ativar um com o [virtualenv](https://pypi.org/project/virtualenv/) utilizando os comandos: 
 - `virtualenv env` - Cria um ambiente chamado *env*
 - `source env/bin/activate` - Ativa o ambiente
 
@@ -25,7 +25,7 @@ Uma breve descrição de como a implementação foi pensada.
 
 ### Como os dados foram baixados?
 As próprias URLs das tabelas são estruturadas:
-http://www.transparencia.mpf.mp.br/conteudo/contracheque/{tipo}/{ano}/{tipo}\_{ano}_{mes}.pdf<n/>
+http://www.transparencia.mpf.mp.br/conteudo/contracheque/{tipo}/{ano}/{tipo}_{ano}_{mes}.pdf<n/>
 
 Onde **tipo** pode ser:
 - remuneracao-servidores-ativos
@@ -54,7 +54,7 @@ Onde **tipo_short** pode ser:
 Para **ano** e **mes** se aplica a mesma regra do primeiro exemplo.
 
 ### Qual o formato dos dados baixados?
-Para os contracheques de antes de 06/2019, as tabelas estão disponíveis nos formatos **xls** e **pdf**. Após esta data, estão disponíveis nos formatos **ods** e **pdf**.
+Para os contracheques de antes de 07/2019, as tabelas estão disponíveis nos formatos **xls** e **pdf**. Após esta data, estão disponíveis nos formatos **ods** e **pdf**.
 
 Eu escolhi trabalhar com **pdf** pelo fato de estar disponível em todos os casos.
 Utilizei a biblioteca [tabula-py](https://pypi.org/project/tabula-py/) que facilitou bastante o trabalho de download e conversão para [*DataFrame*](https://pt.wikipedia.org/wiki/Pandas_(software)).
